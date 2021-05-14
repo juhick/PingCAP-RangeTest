@@ -315,7 +315,7 @@ ALTER TABLE employees DROP PARTITION p3;
 
 #### 测试项目
 
-进行删除不在的分区时的结果
+进行删除不存在的分区时的结果
 
 #### 重要级别
 
@@ -341,7 +341,7 @@ ALTER TABLE employees DROP PARTITION p4;
 
 #### 测试结论
 
-能够成功提示错误
+删除不存在的分区时能够成功提示错误
 
 ---
 
@@ -445,7 +445,7 @@ INSERT INTO employees(id, fname, lname, hired, job_code, store_id) VALUES (11,'T
 
 #### 测试结论
 
-对不符合分区的数据能够正确进行错误提示
+对不符合分区的数据插入能够正确进行错误提示
 
 ---
 
@@ -489,7 +489,7 @@ ALTER TABLE employees TRUNCATE PARTITION p0;
 
 #### 测试项目
 
-清楚不存在的分区时能否正确给出错误提示
+清空不存在的分区时能否正确给出错误提示
 
 #### 重要级别
 
@@ -515,7 +515,7 @@ ALTER TABLE employees TRUNCATE PARTITION p4;
 
 #### 测试结论
 
-清空不存在的分区是能够给出正确的错误提示
+清空不存在的分区时能够给出正确的错误提示
 
 ---
 
@@ -663,7 +663,7 @@ from information_schema.partitions  where
 
 #### 测试结论
 
-能供成功显示时间戳类型分区表的分区信息
+能够成功显示时间戳类型分区表的分区信息
 
 ---
 
